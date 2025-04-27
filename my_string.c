@@ -278,7 +278,7 @@ Status my_string_assignment(ITEM* phLeft, ITEM hRight)
     String* pLeft = (String*)*phLeft;
     String* pRight = (String*)hRight;
     int i;
-    
+
     if(pLeft == NULL)
     {
         pLeft = my_string_init_default();
@@ -287,28 +287,28 @@ Status my_string_assignment(ITEM* phLeft, ITEM hRight)
             return FAILURE;
         }
     }
-    
+
     for(i = 0; i < pLeft->size; i++)
     {
         my_string_pop_back(pLeft);
     }
-    
+
     for(i = 0; i < pRight->size; i++)
     {
         my_string_push_back(pLeft, pRight->data[i]);
     }
-    
+
     *phLeft = pLeft;
-    
+
     return SUCCESS;
      */
     String* pMy_string_left = (String*)*phLeft;
     String* pMy_string_right = (String*)hRight;
     int i;
     const char* temp;
-    
+
     temp = my_string_c_str((MY_STRING)hRight);
-    
+
     if (pMy_string_left == NULL) {
         pMy_string_left = my_string_init_c_string(temp);
     }

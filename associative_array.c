@@ -205,7 +205,7 @@ void tree_destroy(TREE* phRoot)
 {
     Tree* pRoot = (Tree*)*phRoot;
     
-    if(pRoot->root != NULL)
+    if(pRoot != NULL)
     {
         destroy(pRoot->root);
         free(pRoot);
